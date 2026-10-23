@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-indigo-900 text-white hidden md:block p-5">
+            <h1 class="text-2xl font-bold mb-8">TaskFlow</h1>
+            <nav class="space-y-4">
+                <a href="#" class="block py-2.5 px-4 rounded bg-indigo-800">Dashboard</a>
+                <a href="#" class="block py-2.5 px-4 rounded hover:bg-indigo-800">Projects</a>
+                <a href="#" class="block py-2.5 px-4 rounded hover:bg-indigo-800">Analytics</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-y-auto">
+            <header class="bg-white shadow-sm p-4 flex justify-between items-center">
+                <h2 class="text-xl font-semibold text-gray-800">Project Overview</h2>
+                <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full">Active Session</span>
+            </header>
+
+            <div class="p-6">
+                <!-- Responsive Grid (Solves mobile overflow) -->
+                <div id="metrics-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Skeleton Loaders injected via JS -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm animate-pulse">
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                        <div class="h-8 bg-gray-200 rounded w-3/4"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm animate-pulse">
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                        <div class="h-8 bg-gray-200 rounded w-3/4"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm animate-pulse">
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                        <div class="h-8 bg-gray-200 rounded w-3/4"></div>
+                    </div>
+                </div>
+
+                <!-- Data Table / Card View -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-lg font-bold mb-4">Recent Tasks</h3>
+                    <div id="task-list" class="space-y-3">
+                        <!-- Dynamic Content -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
